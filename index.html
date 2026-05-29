@@ -6,7 +6,10 @@
 <title>T-Core Web Solutions</title>
 
 <style>
-html { scroll-behavior: smooth; }
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -24,6 +27,9 @@ header {
     background: rgba(2,6,23,0.9);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #1e293b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 /* LOGO */
@@ -32,6 +38,7 @@ header {
     font-weight: bold;
     font-size: 20px;
 }
+
 .logo .sub {
     font-size: 12px;
     color: #94a3b8;
@@ -42,9 +49,11 @@ nav a {
     margin-left: 25px;
     color: #94a3b8;
     text-decoration: none;
+    transition: 0.3s;
 }
-nav a:hover { 
-    color: white; 
+
+nav a:hover {
+    color: white;
 }
 
 /* HERO */
@@ -54,15 +63,17 @@ nav a:hover {
     background: radial-gradient(circle at top, #1e293b, #020617);
 }
 
-.hero h1 { 
-    font-size: 50px; 
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
 }
 
 .hero p {
-    max-width: 600px;
+    max-width: 650px;
     margin: 15px auto;
     color: #94a3b8;
     font-size: 18px;
+    line-height: 1.7;
 }
 
 /* BUTTON */
@@ -80,17 +91,34 @@ nav a:hover {
 }
 
 .btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 }
 
 /* SECTIONS */
 section {
-    padding: 80px 20px;
+    padding: 90px 20px;
     text-align: center;
 }
 
 section p {
     color: #94a3b8;
+    line-height: 1.8;
+}
+
+h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+/* NEW SECTION STYLE */
+.value-box {
+    max-width: 800px;
+    margin: auto;
+    background: #0f172a;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #1e293b;
+    line-height: 1.8;
 }
 
 /* CARDS */
@@ -99,13 +127,14 @@ section p {
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
+    margin-top: 40px;
 }
 
 .card {
-    background: #020617;
-    padding: 25px;
-    width: 260px;
-    border-radius: 15px;
+    background: #0f172a;
+    padding: 30px;
+    width: 290px;
+    border-radius: 18px;
     border: 1px solid #1e293b;
     opacity: 0;
     transform: translateY(30px);
@@ -118,13 +147,20 @@ section p {
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 20px rgba(34,197,94,0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(34,197,94,0.18);
+    border-color: #22c55e;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
 }
 
 .highlight {
     color: #22c55e;
     font-weight: bold;
+    font-size: 20px;
 }
 
 /* WHATSAPP FLOAT */
@@ -139,21 +175,50 @@ section p {
     font-size: 20px;
     text-decoration: none;
     box-shadow: 0 0 15px rgba(34,197,94,0.4);
+    transition: 0.3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.08);
 }
 
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     color: #64748b;
     border-top: 1px solid #1e293b;
 }
+
+/* MOBILE */
+@media(max-width:768px){
+
+header {
+    padding: 18px 20px;
+}
+
+nav {
+    display: none;
+}
+
+.hero h1 {
+    font-size: 38px;
+}
+
+.cards {
+    flex-direction: column;
+    align-items: center;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <div class="logo">
 <span class="main">T-CORE</span><br>
 <span class="sub">Web Solutions</span>
@@ -162,92 +227,223 @@ footer {
 <nav>
 <a href="#">Home</a>
 <a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#demos">Demos</a>
 <a href="#contact">Contact</a>
 </nav>
+
 </header>
 
+<!-- HERO -->
 <div class="hero">
+
 <h1>Build a Powerful Online Presence</h1>
+
 <p>
 We create modern websites that help businesses grow, stand out, and attract more customers online.
 </p>
 
 <a href="#contact" class="btn">Get Started</a>
+
 </div>
 
 <!-- ABOUT -->
 <section id="about">
+
 <h2>About T-Core</h2>
 
+<p style="max-width:700px; margin:auto;">
+T-Core Web Solutions helps small businesses build clean, modern websites that improve their online presence, build trust, and attract more customers.
+</p>
+
+<p style="margin-top:20px;">
+Based in Trinidad & Tobago 🇹🇹
+</p>
+
+</section>
+
+<!-- HOW WE HELP -->
+<section id="how-it-helps">
+
+<h2>How We Help You Get Customers</h2>
+
+<div class="value-box">
+
 <p>
-T-Core Web Solutions helps small businesses build clean, modern websites that improve their online presence and attract customers.
+Most businesses lose customers because they don’t look professional online or are hard to contact.
 </p>
 
 <p>
-Based in Trinidad & Tobago 🇹🇹
+We fix that by building websites that:
 </p>
+
+<p>
+✔ Make your business look trusted and professional<br>
+✔ Help customers understand your services instantly<br>
+✔ Make it easy for people to contact you on WhatsApp<br>
+✔ Showcase your products, menu, or services clearly<br>
+✔ Allow online ordering for stores and businesses
+</p>
+
+<p>
+In simple terms — we turn visitors into customers.
+</p>
+
+</div>
+
 </section>
 
 <!-- SERVICES -->
 <section id="services">
+
 <h2>Services</h2>
+
+<p style="max-width:700px; margin:15px auto 50px;">
+Professional modern websites designed to help businesses grow, attract customers, and build a stronger online presence.
+</p>
 
 <div class="cards">
 
 <div class="card">
-<h3>Basic Website</h3>
-<p>Simple one-page design.</p>
-<p class="highlight">$500 TT</p>
+<h3>Starter Website</h3>
+<p>Modern one-page website perfect for small businesses looking to establish a professional online presence.</p>
+<br>
+<p>✅ Mobile Responsive<br>✅ WhatsApp Integration<br>✅ Modern Design<br>✅ Fast Loading<br>✅ Professional Layout</p>
+<br>
+<p class="highlight">From $800 TT</p>
 </div>
 
 <div class="card">
 <h3>Business Website</h3>
-<p>Professional multi-section layout.</p>
-<p class="highlight">$800 TT</p>
+<p>Premium multi-section business website with stronger branding, animations, and advanced layouts.</p>
+<br>
+<p>✅ Premium Design<br>✅ Multiple Sections<br>✅ Gallery & Reviews<br>✅ Smooth Animations<br>✅ Advanced UI Styling</p>
+<br>
+<p class="highlight">From $1200 TT</p>
 </div>
 
 <div class="card">
-<h3>Premium Website</h3>
-<p>Advanced full design.</p>
-<p class="highlight">$1000 TT</p>
+<h3>Online Stores</h3>
+<p>We design and build modern e-commerce websites where businesses can sell products online and grow their brand digitally.</p>
+<br>
+<p>🛒 Product Listings<br>💳 Cart & Checkout Systems<br>📱 Mobile Friendly Storefronts<br>⚡ Fast Loading & Modern UI<br>📊 Business-Ready Structure</p>
+<br>
+<p class="highlight">From $1500 TT</p>
+</div>
+
+<div class="card">
+<h3>Custom Premium</h3>
+<p>Fully custom premium websites tailored for brands that want a high-end online experience.</p>
+<br>
+<p>✅ Custom Branding<br>✅ Advanced Features<br>✅ Premium User Experience<br>✅ Custom Layouts<br>✅ Quote Based Pricing</p>
+<br>
+<p class="highlight">Contact For Quote</p>
 </div>
 
 </div>
+
 </section>
 
-<!-- PORTFOLIO -->
-<section>
-<h2>Portfolio</h2>
+<!-- WEBSITE TYPES -->
+<section id="portfolio">
+
+<h2>Website Types</h2>
+
+<p style="max-width:700px; margin:auto;">
+We create modern websites tailored for different industries and business styles.
+</p>
 
 <div class="cards">
 
 <div class="card">
 <h3>Barbershop</h3>
-<p>Booking + services layout.</p>
+<p>Modern booking-style website with premium branding and service sections.</p>
 </div>
 
 <div class="card">
 <h3>Food Business</h3>
-<p>Menu-style modern design.</p>
+<p>High-converting restaurant and food websites with menus, galleries, and delivery layouts.</p>
 </div>
 
 <div class="card">
 <h3>Clothing Brand</h3>
-<p>Product showcase layout.</p>
+<p>Clean product showcase websites designed for fashion and streetwear brands.</p>
+</div>
+
+<div class="card">
+<h3>Spa & Wellness</h3>
+<p>Relaxing, elegant spa websites with service lists, pricing, booking integration, and premium visuals.</p>
 </div>
 
 </div>
+
+</section>
+
+<!-- DEMOS -->
+<section id="demos">
+
+<h2>Live Demo Websites</h2>
+
+<p style="max-width:700px; margin:auto;">
+Explore fully designed demo websites created by T-Core Web Solutions.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>SmokeHouse 868</h3>
+<p>Premium food business demo website with modern visuals, reviews, galleries, and delivery sections.</p>
+<br>
+<a href="https://tcorewebsolutions.github.io/Smokehouse/" target="_blank" class="btn">View Demo</a>
+</div>
+
+<div class="card">
+<h3>Urban Cuts</h3>
+<p>Premium barbershop demo website with booking layouts, services, and modern branding.</p>
+<br>
+<a href="#" class="btn">View Demo</a>
+</div>
+
+<div class="card">
+<h3>Online Store Demo</h3>
+<p>This is where our live e-commerce store demo will be added.</p>
+<br>
+<p class="highlight">Coming Soon / Live Link Pending</p>
+<br>
+<a href="#" class="btn">View Store (Soon)</a>
+</div>
+
+<!-- FIXED SPA LINK -->
+<div class="card">
+<h3>Spa & Wellness Demo</h3>
+<p>A premium relaxing spa demo with services, pricing, gallery, and booking design.</p>
+<br>
+<a href="https://tcorewebsolutions.github.io/-serenity-bliss-spa/" target="_blank" class="btn">
+View Spa Demo
+</a>
+</div>
+
+<div class="card">
+<h3>More Coming Soon</h3>
+<p>Additional premium website demos are currently being added to the T-Core portfolio.</p>
+<br>
+<a href="#" class="btn">Coming Soon</a>
+</div>
+
+</div>
+
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
+
 <h2>Get In Touch</h2>
 
-<p>
-Ready to build your website? Message T-Core Web Solutions on WhatsApp.
+<p style="max-width:700px; margin:auto;">
+Ready to build your website? Message T-Core Web Solutions directly on WhatsApp.
 </p>
 
-<p>
+<p style="margin-top:20px;">
 Based in Trinidad & Tobago 🇹🇹
 </p>
 
@@ -273,8 +469,7 @@ const cards = document.querySelectorAll('.card');
 window.addEventListener('scroll', () => {
     cards.forEach(card => {
         const top = card.getBoundingClientRect().top;
-
-        if (top < window.innerHeight - 50) {
+        if(top < window.innerHeight - 50){
             card.classList.add('show');
         }
     });
